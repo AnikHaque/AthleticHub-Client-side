@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "thumbnail": "https://w7.pngwing.com/pngs/388/444/png-transparent-web-development-responsive-web-design-php-development-tools-software-development-web-design-web-design-development-responsive-web-design-thumbnail.png",
+    "name": "CodeMaster Pro",
+    "category": "Development Tools",
+    "price": "$19.99",
+    "frequency": "Monthly"
+  },
+  {
+    "id": 2,
+    "thumbnail": "https://w7.pngwing.com/pngs/527/745/png-transparent-web-development-graphic-design-web-design-web-design-electronics-gadget-search-engine-optimization-thumbnail.png",
+    "name": "DesignCraft",
+    "category": "Design Tools",
+    "price": "$14.99",
+    "frequency": "Monthly"
+  },
+  {
+    "id": 3,
+    "thumbnail": "https://w7.pngwing.com/pngs/1000/942/png-transparent-icloud-storage-logo-cloud-computing-cloud-storage-internet-data-center-cloud-computing-blue-computer-network-service-thumbnail.png",
+    "name": "CloudSync",
+    "category": "Cloud Storage",
+    "price": "$9.99",
+    "frequency": "Monthly"
+  },
+  {
+    "id": 4,
+    "thumbnail": "https://w7.pngwing.com/pngs/902/264/png-transparent-streaming-media-online-video-platform-business-service-live-youtube-blue-text-service-thumbnail.png",
+    "name": "StreamHub",
+    "category": "Media Streaming",
+    "price": "$12.99",
+    "frequency": "Monthly"
+  },
+  {
+    "id": 5,
+    "thumbnail": "https://w7.pngwing.com/pngs/783/593/png-transparent-youtube-video-advertising-business-content-creation-youtube-infographic-display-advertising-logo-thumbnail.png",
+    "name": "AI Writer",
+    "category": "Content Creation",
+    "price": "$24.99",
+    "frequency": "Monthly"
+  },
+  {
+    "id": 6,
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk6Br7HahE1-Hg6b9q1wC2MmKE5ecTPbohTA&s",
+    "name": "DevOps Guard",
+    "category": "Infrastructure Monitoring",
+    "price": "$29.99",
+    "frequency": "Monthly"
+  }
+]
