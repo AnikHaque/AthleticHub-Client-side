@@ -20,6 +20,7 @@ import Contact from "../components/Contact/Contact";
 import AboutPage from "../components/About/About";
 import MainAbout from "../components/About/MainAbout";
 import MyBookings from "../components/Tasks/MyBookings";
+import AddEvent from "../components/Tasks/AddEvents";
 
 export default function AppRoutes() {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -84,6 +85,15 @@ export default function AppRoutes() {
         element={
           <ProtectedRoute user={user} token={token}>
             <AddTask user={user} token={token} />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/add-event"
+        element={
+          <ProtectedRoute user={user} token={token}>
+            <AddEvent user={user} token={token} />
           </ProtectedRoute>
         }
       />

@@ -4,7 +4,7 @@ const slides = [
   {
     id: 1,
     image:
-      "https://sslcommerz.com/wp-content/uploads/2024/04/Importance-of-Online-Payment-Gateways-for-Freelancers.png",
+      "https://demo2.themelexus.com/adventis/wp-content/uploads/2023/10/h1-bg02.jpg",
     title: "The Easiest Way to Get Your New Task",
     desc: "Work with talented people at the most affordable price to get the most out of your time and cost",
     btn1: "Subscribe Now",
@@ -50,7 +50,8 @@ const Hero = () => {
             />
 
             {/* Centered overlay content */}
-            <div className="absolute inset-0 bg-[rgba(0,0,0,0.3)] flex justify-center items-center">
+            {/* Centered overlay content */}
+            <div className="absolute inset-0 bg-[rgba(255,165,0,0.40)] flex justify-center items-center">
               <div className="text-white text-center px-4 md:px-8">
                 <h2 className="text-3xl md:text-6xl font-bold mb-4">
                   {slide.title}
