@@ -96,15 +96,6 @@ export default function Navbar() {
               Browse Events
             </Link>
 
-            <Link
-              to="/my-events"
-              className={`block py-1 ${
-                isActive("/my-events") ? "font-semibold underline" : ""
-              }`}
-            >
-              My Events
-            </Link>
-
             {/* Profile Dropdown */}
             <div className="relative">
               <button

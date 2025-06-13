@@ -36,7 +36,7 @@ const MyBookings = () => {
   return (
     <div className="p-8 max-w-6xl mx-auto">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-bold">My Booked Tasks</h2>
+        <h2 className="text-2xl font-bold">My Booked Events</h2>
         <div>
           <button
             onClick={() => setViewMode("table")}
