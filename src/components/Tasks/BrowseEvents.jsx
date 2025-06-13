@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const BrowseEvents = () => {
+const BrowseEvents = ({ user, token }) => {
   const [tasks, setTasks] = useState([]);
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -56,7 +56,7 @@ const BrowseEvents = () => {
                     {new Date(event.date).toLocaleDateString()}
                   </p>
                   <button
-                    onClick={() => navigate(`/task-details/${event._id}`)}
+                    onClick={() => navigate(`/event-details/${event._id}`)}
                     className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-300"
                   >
                     See Details
