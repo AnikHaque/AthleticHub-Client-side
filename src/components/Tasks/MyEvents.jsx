@@ -3,7 +3,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const MyEvents = () => {
-  const [tasks, setTasks] = useState([]);
   const [events, setEvents] = useState([]);
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -28,25 +27,21 @@ const MyEvents = () => {
     fetchEvents();
   }, []);
 
-  const handleDelete = async (taskId) => {
+  const handleDelete = async (eventId) => {
     const token = localStorage.getItem("token");
     try {
-      await axios.delete(`http://localhost:8800/api/tasks/${taskId}`, {
+      await axios.delete(`http://localhost:8800/api/events/${eventId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      setTasks(tasks.filter((task) => task._id !== taskId));
+      setEvents(events.filter((event) => event._id !== eventId));
     } catch (err) {
-      setError("Error deleting task");
+      setError("Error deleting event");
       console.error("❌ Delete error:", err);
     }
   };
 
   const handleUpdate = (taskId) => {
     navigate(`/update-event/${taskId}`);
-  };
-
-  const handleViewBids = (taskId) => {
-    navigate(`/bids/${taskId}`);
   };
 
   return (
@@ -126,12 +121,6 @@ const MyEvents = () => {
                       className="bg-red-500 text-white px-2 py-1 rounded"
                     >
                       Delete
-                    </button>
-                    <button
-                      onClick={() => handleViewBids(event._id)}
-                      className="bg-blue-500 text-white px-2 py-1 rounded"
-                    >
-                      View Bids
                     </button>
                   </td>
                 </tr>
