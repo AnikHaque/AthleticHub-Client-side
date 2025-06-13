@@ -23,6 +23,8 @@ import MyBookings from "../components/Tasks/MyBookings";
 import AddEvent from "../components/Tasks/AddEvents";
 import BrowseEvents from "../components/Tasks/BrowseEvents";
 import EventDetails from "../components/Tasks/EventDetails";
+import MyEvents from "../components/Tasks/MyEvents";
+import UpdateEvent from "../components/Tasks/UpdateEvent";
 
 export default function AppRoutes() {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -118,12 +120,28 @@ export default function AppRoutes() {
           </ProtectedRoute>
         }
       />
+      <Route
+        path="/my-events"
+        element={
+          <ProtectedRoute user={user} token={token}>
+            <MyEvents user={user} />
+          </ProtectedRoute>
+        }
+      />
 
       <Route
         path="/update-task/:id"
         element={
           <ProtectedRoute user={user} token={token}>
             <UpdateTaskPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/update-event/:id"
+        element={
+          <ProtectedRoute user={user} token={token}>
+            <UpdateEvent />
           </ProtectedRoute>
         }
       />
