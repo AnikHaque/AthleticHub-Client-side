@@ -3,6 +3,7 @@ import PopularCategories from "../components/Categories/PopularCategories";
 import AppPromo from "../components/AppPromo/AppPromo";
 import Youtube from "../components/Youtube/Youtube";
 import ServiceCards from "../components/Tasks/Featured";
+import ReviewsCarousel from "../components/Tasks/ReviewsCarousel";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <ServiceCards />
       <Youtube></Youtube>
       <AppPromo />
+      <ReviewsCarousel></ReviewsCarousel>
     </div>
   );
 };
