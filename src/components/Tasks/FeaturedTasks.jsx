@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ServiceCards = () => {
   const [tasks, setTasks] = useState([]);
@@ -43,6 +43,9 @@ const ServiceCards = () => {
             >
               <div className="p-6 flex flex-col h-full justify-between">
                 <div>
+                  <img src={task.picture}></img>
+                </div>
+                <div>
                   <h3 className="text-2xl font-semibold text-gray-900 mb-3">
                     {task.title}
                   </h3>
@@ -52,12 +55,7 @@ const ServiceCards = () => {
                       {task.category}
                     </p>
                     <p>
-                      <span className="font-semibold">Budget:</span> $
-                      {task.budget}
-                    </p>
-                    <p>
-                      <span className="font-semibold">Deadline:</span>{" "}
-                      {new Date(task.deadline).toLocaleDateString()}
+                      <span className="font-semibold">date:</span> {task.date}
                     </p>
                   </div>
                 </div>
@@ -71,6 +69,12 @@ const ServiceCards = () => {
             </div>
           ))}
         </div>
+      </div>
+      <div className="flex justify-center items-center ">
+        <Link to="/browse-events" className="text-blue-500 font-bold text-2xl">
+          {" "}
+          See All Events{" "}
+        </Link>
       </div>
     </div>
   );

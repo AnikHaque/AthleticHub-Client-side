@@ -19,12 +19,12 @@ const AppPromo = () => {
             className="text-4xl font-bold mb-4"
             style={{ color: "var(--heading-color, var(--text-color))" }}
           >
-            Get the Freelancer <br />
+            Get the best mobile <br />
             <span
               className=""
               style={{ color: "var(--text-muted-color, var(--text-color))" }}
             >
-              Job Search App
+              Athletic App
             </span>
           </h2>
           <p

@@ -3,6 +3,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { Typewriter } from "react-simple-typewriter";
+import { Link } from "react-router-dom";
 
 const AddEvent = ({ user, token }) => {
   const {
@@ -83,7 +84,7 @@ const AddEvent = ({ user, token }) => {
               className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="">Select Type</option>
-              <option value="Web Development">Race</option>
+              <option value="Race">Race</option>
               <option value="Design">Design</option>
               <option value="Writing">Writing</option>
               <option value="Marketing">Marketing</option>
@@ -115,7 +116,7 @@ const AddEvent = ({ user, token }) => {
           <div>
             <input
               type="date"
-              {...register("deadline", { required: "Date is required" })}
+              {...register("date", { required: "Date is required" })}
               className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             {errors.deadline && (

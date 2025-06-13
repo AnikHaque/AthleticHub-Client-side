@@ -86,46 +86,59 @@ export default function Navbar() {
             >
               Home
             </Link>
+
             <Link
-              to="/about"
+              to="/browse-events"
               className={`block py-1 ${
-                isActive("/about") ? "font-semibold underline" : ""
+                isActive("/browse-events") ? "font-semibold underline" : ""
               }`}
             >
-              About
+              Browse Events
             </Link>
+
             <Link
-              to="/add-task"
+              to="/my-events"
               className={`block py-1 ${
-                isActive("/add-task") ? "font-semibold underline" : ""
+                isActive("/my-events") ? "font-semibold underline" : ""
               }`}
             >
-              Add Task
+              My Events
             </Link>
-            <Link
-              to="/browse-tasks"
-              className={`block py-1 ${
-                isActive("/browse-tasks") ? "font-semibold underline" : ""
-              }`}
-            >
-              Browse Tasks
-            </Link>
-            <Link
-              to="/my-posted-tasks"
-              className={`block py-1 ${
-                isActive("/my-posted-tasks") ? "font-semibold underline" : ""
-              }`}
-            >
-              My Posted Tasks
-            </Link>
-            <Link
-              to="/my-bookings"
-              className={`block py-1 ${
-                isActive("/my-posted-tasks") ? "font-semibold underline" : ""
-              }`}
-            >
-              My Bookings
-            </Link>
+
+            {/* Profile Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setIsOpen((prev) => !prev)}
+                className="flex items-center gap-1 py-1 hover:underline focus:outline-none"
+              >
+                Profile <span className="text-sm">▼</span>
+              </button>
+              {isOpen && (
+                <div className="absolute bg-white text-black rounded shadow-md mt-2 py-2 w-40 z-20">
+                  <Link
+                    to="/add-event"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Create Event
+                  </Link>
+                  <Link
+                    to="/my-events"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    My Events
+                  </Link>
+                  <Link
+                    to="/my-bookings"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    My Bookings
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
 
           <div className="mt-4 md:mt-0 flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
@@ -144,35 +157,29 @@ export default function Navbar() {
                   className="cursor-pointer flex items-center gap-2"
                   onClick={() => setShowUserDropdown((prev) => !prev)}
                 >
-                  {user?.photoURL ? (
-                    <img
-                      src={user.photoURL}
-                      alt="User"
-                      className="w-8 h-8 rounded-full border-2 border-white"
-                    />
+                  {user.photoURL ? (
+                    <div className="relative group cursor-pointer">
+                      <img
+                        src={user.photoURL}
+                        alt="User"
+                        className="w-8 h-8 rounded-full border-2 border-white"
+                      />
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-black text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition duration-200 whitespace-nowrap z-10">
+                        {user.name || "No Name"}
+                      </div>
+                    </div>
                   ) : (
                     <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-black">
                       ?
                     </div>
                   )}
+                  <button
+                    onClick={logout}
+                    className="bg-red-500 hover:bg-red-600 px-3 py-1 rounded"
+                  >
+                    Logout
+                  </button>
                 </div>
-
-                {showUserDropdown && (
-                  <div className="absolute right-0 mt-2 bg-black text-white rounded shadow-lg p-3 text-sm z-20 w-48">
-                    <div className="mb-2 font-medium">
-                      {user.name || "No Name"}
-                    </div>
-                    <div className="mb-3 text-gray-300">
-                      {user.email || "No email"}
-                    </div>
-                    <button
-                      onClick={logout}
-                      className="w-full bg-red-500 hover:bg-red-600 px-3 py-1 rounded"
-                    >
-                      Logout
-                    </button>
-                  </div>
-                )}
               </div>
             ) : (
               <div className="flex items-center gap-2">
