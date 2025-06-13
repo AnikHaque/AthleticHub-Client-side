@@ -62,7 +62,7 @@ const ServiceCards = () => {
                   </div>
                 </div>
                 <button
-                  onClick={() => navigate(`/task-details/${task._id}`)}
+                  onClick={() => navigate(`/event-details/${task._id}`)}
                   className="mt-6 w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-2 rounded-lg hover:from-blue-700 hover:to-purple-700 transition duration-300"
                 >
                   View Details
