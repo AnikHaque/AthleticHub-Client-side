@@ -21,6 +21,7 @@ import AboutPage from "../components/About/About";
 import MainAbout from "../components/About/MainAbout";
 import MyBookings from "../components/Tasks/MyBookings";
 import AddEvent from "../components/Tasks/AddEvents";
+import BrowseEvents from "../components/Tasks/BrowseEvents";
 
 export default function AppRoutes() {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -35,6 +36,7 @@ export default function AppRoutes() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/success" element={<SuccessStories />} />
       <Route path="/browse-tasks" element={<BrowseTasks />} />
+      <Route path="/browse-events" element={<BrowseEvents />} />
       <Route path="/bids/:taskId" element={<BidsPage />} />
       <Route path="/404" element={<NotFound />} />
       <Route path="*" element={<Navigate to="/404" />} />
