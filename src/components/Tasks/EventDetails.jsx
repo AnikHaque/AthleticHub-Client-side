@@ -21,7 +21,25 @@ const EventDetails = ({ user, token }) => {
         setError("Event not found or error fetching event.");
         console.error("Error fetching event:", err);
       });
-  }, [id]);
+
+    axios
+      .get("http://localhost:8800/api/my-bookings", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        const alreadyBooked = res.data.some(
+          (booking) => booking.event._id === id
+        );
+        if (alreadyBooked) {
+          setIsBooked(true);
+        }
+      })
+      .catch((err) => {
+        console.error("Failed to check bookings:", err);
+      });
+  }, [id, token]);
 
   if (error) {
     return (

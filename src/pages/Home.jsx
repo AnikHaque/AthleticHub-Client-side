@@ -1,10 +1,8 @@
-import React from "react";
 import Hero from "../components/Hero/Hero";
 import PopularCategories from "../components/Categories/PopularCategories";
-import ServiceCards from "../components/Tasks/FeaturedTasks";
-import PopularSellers from "../components/Seller/PopularSeller";
 import AppPromo from "../components/AppPromo/AppPromo";
 import Youtube from "../components/Youtube/Youtube";
+import ServiceCards from "../components/Tasks/Featured";
 
 const Home = () => {
   return (
