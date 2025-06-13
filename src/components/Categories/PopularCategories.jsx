@@ -2,29 +2,28 @@ import React from "react";
 
 const categories = [
   {
-    title: "Graphics Design",
-    image:
-      "https://themebing.com/wp/prolancer/wp-content/uploads/2021/09/img-6-400x400.jpg",
+    title: "Cricket",
+    image: "https://img.pikbest.com/origin/10/07/00/23gpIkbEsTKfe.png!bw700",
   },
   {
-    title: "Hosting",
+    title: "Football",
     image:
-      "https://themebing.com/wp/prolancer/wp-content/uploads/2021/09/img-10-400x400.jpg",
+      "https://e7.pngegg.com/pngimages/767/690/png-clipart-bookmaker-sport-ukraine-national-football-team-game-football-players-game-sports-equipment-thumbnail.png",
   },
   {
-    title: "Marketing",
+    title: "Batminton",
     image:
-      "https://themebing.com/wp/prolancer/wp-content/uploads/2021/09/img-3-400x400.jpg",
+      "https://e7.pngegg.com/pngimages/265/469/png-clipart-female-badminton-player-badminton-display-resolution-badminton-player-tshirt-image-file-formats-thumbnail.png",
   },
   {
-    title: "Website Development",
+    title: "Wrestling",
     image:
-      "https://themebing.com/wp/prolancer/wp-content/uploads/2021/09/img-1-400x400.jpg",
+      "https://www.pngall.com/wp-content/uploads/11/Wrestling-Competition-PNG-File.png",
   },
   {
-    title: "Link Building",
+    title: "Golf",
     image:
-      "https://themebing.com/wp/prolancer/wp-content/uploads/2021/09/img-7-400x400.jpg",
+      "https://png.pngtree.com/png-clipart/20220124/ourmid/pngtree-golf-man-cartoon-golf-vector-layered-map-png-image_4261704.png",
   },
 ];
 
@@ -38,7 +37,7 @@ const PopularCategories = () => {
         className="text-4xl font-bold"
         style={{ color: "var(--heading-color, var(--text-color))" }}
       >
-        Popular Categories
+        Popular Sports
       </h2>
       <p
         className="mt-4 max-w-xl mx-auto"
