@@ -9,10 +9,11 @@ const TaskDetails = () => {
   const [error, setError] = useState("");
   const [bidsCount, setBidsCount] = useState(0);
   const [userHasBidded, setUserHasBidded] = useState(false);
+  const [isBooked, setIsBooked] = useState(false);
 
   useEffect(() => {
     axios
-      .get(`https://freelancer-website-server.vercel.app/api/tasks/${id}`)
+      .get(`http://localhost:8800/api/tasks/${id}`)
       .then((res) => setTask(res.data))
       .catch((err) => {
         setError("Task not found or error fetching task.");
@@ -20,7 +21,7 @@ const TaskDetails = () => {
       });
 
     axios
-      .get(`https://freelancer-website-server.vercel.app/api/bids/${id}`)
+      .get(`http://localhost:8800/api/bids/${id}`)
       .then((res) => setBidsCount(res.data.length))
       .catch((err) => console.error("Error fetching bids:", err));
   }, [id]);
@@ -33,7 +34,7 @@ const TaskDetails = () => {
 
     axios
       .post(
-        `https://freelancer-website-server.vercel.app/api/bids/${id}`,
+        `http://localhost:8800/api/bids/${id}`,
         { taskId: id },
         {
           headers: {
@@ -69,6 +70,27 @@ const TaskDetails = () => {
       </div>
     );
   }
+
+  const handleBookNow = () => {
+    axios
+      .post(
+        `http://localhost:8800/api/bookings`,
+        { taskId: id },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      )
+      .then(() => {
+        alert("Task booked successfully!");
+        setIsBooked(true);
+      })
+      .catch((err) => {
+        console.error("Booking failed:", err);
+        alert(err.response?.data?.message || "Booking failed");
+      });
+  };
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-12 bg-gray-50 rounded-lg shadow-md mt-10">
@@ -108,6 +130,17 @@ const TaskDetails = () => {
         }`}
       >
         {userHasBidded ? "You have already placed a bid" : "Place a Bid"}
+      </button>
+      <button
+        onClick={handleBookNow}
+        disabled={isBooked}
+        className={`mt-4 w-full py-3 font-medium text-white rounded-lg transition ${
+          isBooked
+            ? "bg-gray-400 cursor-not-allowed"
+            : "bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700"
+        }`}
+      >
+        {isBooked ? "Already Booked" : "Book Now"}
       </button>
     </div>
   );

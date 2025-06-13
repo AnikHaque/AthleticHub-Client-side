@@ -19,6 +19,7 @@ import BidsPage from "../components/Tasks/BidsPage";
 import Contact from "../components/Contact/Contact";
 import AboutPage from "../components/About/About";
 import MainAbout from "../components/About/MainAbout";
+import MyBookings from "../components/Tasks/MyBookings";
 
 export default function AppRoutes() {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -51,6 +52,14 @@ export default function AppRoutes() {
         element={
           <ProtectedRoute user={user} token={token}>
             <TaskDetails />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/my-bookings"
+        element={
+          <ProtectedRoute user={user} token={token}>
+            <MyBookings></MyBookings>
           </ProtectedRoute>
         }
       />

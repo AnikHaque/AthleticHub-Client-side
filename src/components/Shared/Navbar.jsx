@@ -56,10 +56,13 @@ export default function Navbar() {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-black text-white px-4 py-4 shadow-md">
+    <nav className="bg-[#313f2a] text-white px-4 py-4 shadow-md">
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         <Link to="/" className="text-xl font-bold">
-          DevTech
+          <img
+            src="https://demo2.themelexus.com/adventis/wp-content/uploads/2023/10/logo.svg"
+            className="w-20"
+          ></img>
         </Link>
 
         <button
@@ -114,6 +117,14 @@ export default function Navbar() {
               }`}
             >
               My Posted Tasks
+            </Link>
+            <Link
+              to="/my-bookings"
+              className={`block py-1 ${
+                isActive("/my-posted-tasks") ? "font-semibold underline" : ""
+              }`}
+            >
+              My Bookings
             </Link>
           </div>
 

@@ -15,15 +15,11 @@ const AddTask = ({ user, token }) => {
 
   const onSubmit = async (data) => {
     try {
-      const res = await axios.post(
-        "https://freelancer-website-server.vercel.app/api/add-task",
-        data,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const res = await axios.post("http://localhost:8800/api/add-task", data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       Swal.fire("Success", "Task Added successfully");
       reset();
     } catch (err) {

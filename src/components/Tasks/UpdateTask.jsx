@@ -60,7 +60,7 @@ const UpdateTaskPage = () => {
     const fetchTask = async () => {
       try {
         const response = await axios.get(
-          `https://freelancer-website-server.vercel.app/api/tasks/${id}`,
+          `http://localhost:8800/api/tasks/${id}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -82,7 +82,7 @@ const UpdateTaskPage = () => {
     e.preventDefault();
     try {
       await axios.put(
-        `https://freelancer-website-server.vercel.app/api/tasks/${id}`,
+        `http://localhost:8800/api/tasks/${id}`,
         {
           title: formData.title,
           category: formData.category,

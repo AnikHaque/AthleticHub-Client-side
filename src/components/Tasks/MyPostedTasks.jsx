@@ -11,12 +11,9 @@ const MyPostedTasks = () => {
     const fetchTasks = async () => {
       const token = localStorage.getItem("token");
       try {
-        const response = await axios.get(
-          "https://freelancer-website-server.vercel.app/api/my-tasks",
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          }
-        );
+        const response = await axios.get("http://localhost:8800/api/my-tasks", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
         setTasks(response.data);
       } catch (err) {
         setError("Error fetching tasks");
@@ -30,12 +27,9 @@ const MyPostedTasks = () => {
   const handleDelete = async (taskId) => {
     const token = localStorage.getItem("token");
     try {
-      await axios.delete(
-        `https://freelancer-website-server.vercel.app/api/tasks/${taskId}`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
+      await axios.delete(`http://localhost:8800/api/tasks/${taskId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       setTasks(tasks.filter((task) => task._id !== taskId));
     } catch (err) {
       setError("Error deleting task");

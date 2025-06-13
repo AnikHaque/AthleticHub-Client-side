@@ -13,14 +13,11 @@ export default function GoogleLogin() {
       const { email, displayName, photoURL } = result.user;
 
       // Send the Google user info to your backend and get the JWT token
-      const res = await axios.post(
-        "https://freelancer-website-server.vercel.app/api/save-user",
-        {
-          email,
-          name: displayName,
-          photoURL,
-        }
-      );
+      const res = await axios.post("http://localhost:8800/api/save-user", {
+        email,
+        name: displayName,
+        photoURL,
+      });
 
       // Store the token in localStorage
       localStorage.setItem("token", res.data.token);

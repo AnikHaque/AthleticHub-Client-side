@@ -11,13 +11,10 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post(
-        "https://freelancer-website-server.vercel.app/api/login",
-        {
-          email,
-          password,
-        }
-      );
+      const res = await axios.post("http://localhost:8800/api/login", {
+        email,
+        password,
+      });
       const { token, user } = res.data;
       localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(user));
@@ -32,14 +29,11 @@ const Login = () => {
     try {
       const result = await signInWithPopup(auth, provider);
       const { email, displayName, photoURL } = result.user;
-      const res = await axios.post(
-        "https://freelancer-website-server.vercel.app/api/save-user",
-        {
-          email,
-          name: displayName,
-          photoURL,
-        }
-      );
+      const res = await axios.post("http://localhost:8800/api/save-user", {
+        email,
+        name: displayName,
+        photoURL,
+      });
       localStorage.setItem("token", res.data.token);
       localStorage.setItem(
         "user",
