@@ -7,7 +7,7 @@ const MyBookings = () => {
 
   const fetchBookings = () => {
     axios
-      .get("http://localhost:8800/api/my-bookings", {
+      .get("https://adventis-server.vercel.app/api/my-bookings", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -23,7 +23,7 @@ const MyBookings = () => {
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this booking?")) {
       axios
-        .delete(`http://localhost:8800/api/bookings/${id}`, {
+        .delete(`https://adventis-server.vercel.app/api/bookings/${id}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },

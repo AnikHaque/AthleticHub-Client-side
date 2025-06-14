@@ -12,7 +12,7 @@ const MyEvents = () => {
       const token = localStorage.getItem("token");
       try {
         const response = await axios.get(
-          "http://localhost:8800/api/my-events",
+          "https://adventis-server.vercel.app/api/my-events",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -30,9 +30,12 @@ const MyEvents = () => {
   const handleDelete = async (eventId) => {
     const token = localStorage.getItem("token");
     try {
-      await axios.delete(`http://localhost:8800/api/events/${eventId}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      await axios.delete(
+        `https://adventis-server.vercel.app/api/events/${eventId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       setEvents(events.filter((event) => event._id !== eventId));
     } catch (err) {
       setError("Error deleting event");

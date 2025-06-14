@@ -12,7 +12,7 @@ const BrowseEvents = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:8800/api/events")
+      .get("https://adventis-server.vercel.app/api/events")
       .then((res) => setEvents(res.data))
       .catch((err) => console.error("Failed to fetch events", err))
       .finally(() => setLoading(false));

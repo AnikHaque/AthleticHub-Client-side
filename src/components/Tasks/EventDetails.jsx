@@ -11,7 +11,7 @@ const EventDetails = ({ user, token }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8800/api/events/${id}`, {
+      .get(`https://adventis-server.vercel.app/api/events/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -23,7 +23,7 @@ const EventDetails = ({ user, token }) => {
       });
 
     axios
-      .get("http://localhost:8800/api/my-bookings", {
+      .get("https://adventis-server.vercel.app/api/my-bookings", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -66,7 +66,7 @@ const EventDetails = ({ user, token }) => {
   const handleBookNow = () => {
     axios
       .post(
-        `http://localhost:8800/api/bookings`,
+        `https://adventis-server.vercel.app/api/bookings`,
         { eventId: id },
         {
           headers: {

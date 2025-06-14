@@ -15,11 +15,15 @@ const AddEvent = ({ user, token }) => {
 
   const onSubmit = async (data) => {
     try {
-      await axios.post("http://localhost:8800/api/add-event", data, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      await axios.post(
+        "https://adventis-server.vercel.app/api/add-event",
+        data,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       Swal.fire("Success", "Event Added successfully", "success");
       reset();
     } catch (err) {

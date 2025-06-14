@@ -60,7 +60,7 @@ const UpdateEvent = () => {
     const fetchEvent = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8800/api/events/${id}`,
+          `https://adventis-server.vercel.app/api/events/${id}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -82,7 +82,7 @@ const UpdateEvent = () => {
     e.preventDefault();
     try {
       await axios.put(
-        `http://localhost:8800/api/events/${id}`,
+        `https://adventis-server.vercel.app/api/events/${id}`,
         {
           title: formData.title,
           category: formData.category,

@@ -23,12 +23,15 @@ const Register = () => {
     }
 
     try {
-      const res = await axios.post("http://localhost:8800/api/register", {
-        name,
-        email,
-        password,
-        photoURL,
-      });
+      const res = await axios.post(
+        "https://adventis-server.vercel.app/api/register",
+        {
+          name,
+          email,
+          password,
+          photoURL,
+        }
+      );
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify({ name, email, photoURL }));
       Swal.fire("Success", "Registration successful", "success");
@@ -46,11 +49,14 @@ const Register = () => {
     try {
       const result = await signInWithPopup(auth, provider);
       const { email, displayName, photoURL } = result.user;
-      const res = await axios.post("http://localhost:8800/api/save-user", {
-        email,
-        name: displayName,
-        photoURL,
-      });
+      const res = await axios.post(
+        "https://adventis-server.vercel.app/api/save-user",
+        {
+          email,
+          name: displayName,
+          photoURL,
+        }
+      );
       localStorage.setItem("token", res.data.token);
       localStorage.setItem(
         "user",
