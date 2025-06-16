@@ -1,38 +1,22 @@
-# DevTech
-
-DevTech is a modern freelancing platform designed to seamlessly connect individuals looking for help with small tasks and skilled freelancers seeking work opportunities. Whether you're a startup founder needing a quick design fix or a developer looking to monetize your skills, DevTech provides a streamlined, user-friendly environment to post, bid, and collaborate with confidence.
+🏆 Adventis – Sports Event Management Platform
 
 
-## Key Features
+Adventis is a powerful web-based platform for organizing and managing sports events. Whether you're an organizer looking to create an event or a participant eager to explore and book upcoming tournaments, Adventis makes the experience seamless, interactive, and efficient.
 
-- Email/password and Google login
-  -Add , Browse & Manage Tasks
-- Theme Switch Between Dark/Light
+🚀 Features
 
-- **Show/Hide Password Toggle**
+🔧 Create Event – Organizers can easily create new sports events with full details.
 
-- Secure password UX on Register page
+📅 View All Events – Users can explore all upcoming and past events with filtering options.
 
-- **Custom 404 Page**
+📥 Book Events – Securely book seats/tickets for any available event.
 
-- Styled Not Found page for undefined routes
+📊 Manage Events – Event creators can update, edit, or delete their listed events.
 
-- **Dynamic Page Titles**
-- Uses `react-helmet-async` to set page titles
+🔒 Authentication & Authorization – Role-based access for users and admins.
 
----
+📈 Dashboard Panel – Overview for organizers and participants with key metrics.
 
-## NPM Packages Used
+🌐 Live Demo
+👉 [Coming Soon | Deploy on Vercel / Netlify or your preferred platform]
 
-| Package                 | Purpose                                  |
-| ----------------------- | ---------------------------------------- |
-| react-router-dom        | Routing and protected routes             |
-| firebase                | Authentication and user management       |
-| sweetalert2             | Alerts and notifications                 |
-| react-icons             | Icons for UI (e.g., password eye toggle) |
-| react-helmet-async      | Dynamic page title management            |
-| tailwindcss             | Styling and UI components                |
-| react-simple-typewriter | For Continuous typing                    |
-|  |
-
----
